@@ -359,6 +359,9 @@
             <argument name="commands" xsi:type="array">
                 <item name="import" xsi:type="object">Pimgento\Api\Console\Command\PimgentoImportCommand</item>
             </argument>
+            <argument name="commands" xsi:type="array">
+                <item name="slackNotificationCommand" xsi:type="object">Pimgento\Api\Console\Command\SlackNotificationCommand</item>
+            </argument>
         </arguments>
     </type>
 </config>
