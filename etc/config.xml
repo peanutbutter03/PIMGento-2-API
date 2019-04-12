@@ -34,12 +34,12 @@
                 <include_in_menu>1</include_in_menu>
                 <is_anchor>1</is_anchor>
             </category>
-            <slack_notifications>
+            <slack>
                 <enable>0</enable>
                 <token></token>
-                <username>Pimgento Notification</username>
+                <username>Pimgento</username>
                 <channel></channel>
-            </slack_notifications>
+            </slack>
         </pimgento>
     </default>
 </config>

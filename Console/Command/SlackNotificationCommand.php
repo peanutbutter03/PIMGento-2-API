@@ -24,7 +24,7 @@ class SlackNotificationCommand extends Command
     protected $logs;
     protected $slackMessage;
 
-    public function __construct(Client $client, Data $helperData, Log\Collection $logCollection, SlackMessage $slackMessage, $name = null)
+    public function __construct(Client $client, SlackHelper $helperData, Log\Collection $logCollection, SlackMessage $slackMessage, $name = null)
     {
         $this->client = $client;
         $this->helperData = $helperData;
@@ -122,19 +122,19 @@ class SlackNotificationCommand extends Command
         try {
             $this->client->request('POST', 'https://slack.com/api/chat.postMessage', [
                 'form_params' => [
-                    'token' => $this->helperData->getGeneralConfig('slack_token'),
-                    'channel' => $this->helperData->getGeneralConfig('slack_channel'),
+                    'token' => $this->helperData->getGeneralConfig('token'),
+                    'channel' => $this->helperData->getGeneralConfig('channel'),
                     'text' => $message,
-                    'username' => $this->helperData->getGeneralConfig('slack_username')
+                    'username' => $this->helperData->getGeneralConfig('username')
                 ]]);
 
             return '<info>✅ Message has been send to Slack channel: '
-                . $this->helperData->getGeneralConfig('slack_channel') . '</info>';
+                . $this->helperData->getGeneralConfig('channel') . '</info>';
 
         } catch (RequestException $e) {
             $response =
                 '<fg=red>⚠️  There\'s a problem with sending the message to Slack channel: '
-                . $this->helperData->getGeneralConfig('slack_channel') . " \n\n"
+                . $this->helperData->getGeneralConfig('channel') . " \n\n"
                 . 'The following exception appeared:</>'
                 . '<error>' . "\n\n" . $e->getResponse() . '</error>';
 

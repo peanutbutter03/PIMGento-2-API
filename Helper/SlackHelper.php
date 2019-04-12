@@ -7,7 +7,7 @@ use Magento\Store\Model\ScopeInterface;
 
 class SlackHelper extends AbstractHelper
 {
-    const XML_PATH = 'module-pimgento-2-api/';
+    const XML_PATH = 'pimgento/slack/';
 
     public function getConfigValue($field, $storeId = null)
     {
@@ -18,7 +18,7 @@ class SlackHelper extends AbstractHelper
 
     public function getGeneralConfig($code, $storeId = null)
     {
-        return $this->getConfigValue(self::XML_PATH . 'general/' . $code, $storeId);
+        return $this->getConfigValue(self::XML_PATH . $code, $storeId);
     }
 
 }
