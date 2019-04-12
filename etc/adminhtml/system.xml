@@ -279,7 +279,7 @@ For example :<br/>
                 </field>
                 <field id="channel" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Channel</label>
-                    <comment>Channel, private group, user or IM channel to send message to. Can be an encoded ID, or a name. Channels always start with #. </comment>
+                    <comment>Channel, private group, user or IM channel to send message to. Channels always start with #. Could be an encoded ID, or a name. </comment>
                 </field>
             </group>
         </section>

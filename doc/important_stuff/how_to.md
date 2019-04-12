@@ -63,3 +63,13 @@ Note that if you judge your feature can be used by others, and if you respect th
 * Set Pim to "akeneo_product_name_field"
 * Set Magento to "url_key"
 * Save
+
+### Q: How to setup notifications for Slack
+**A**: You can configurate your settings in the Pimgento Configuration
+* Go to Store -> Configuration -> Catalog -> Pimgento -> Slack
+* Set Enable to "Yes"
+* Enter all the details:
+    * Enter your Slack token to authenticate your app. (Read more about tokens: https://api.slack.com/docs/token-types)
+    * Enter the bot's user name in Username
+    * Enter the channel you want to send the notifications. Can be an encoded ID, or a name. Channels always start with #.
+* Save Config

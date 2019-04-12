@@ -20,7 +20,7 @@ class SlackMessage
      */
     public function success()
     {
-        return ':white_check_mark: All of today\'s Akeneo imports in *' . $this->store->getName()
+        return ':white_check_mark: All of today\'s imports in *' . $this->store->getName()
             . '* have been successfully completed.';
     }
 
@@ -31,14 +31,14 @@ class SlackMessage
      */
     public function warning(Collection $errorLogs = null, Collection $processingLogs = null)
     {
-        $message = ':warning: *Warning!* There\'s a problem with today’s Akeneo imports in *' . $this->store->getName()
+        $message = ':warning: *Warning!* There\'s a problem with today’s imports in *' . $this->store->getName()
             . "*.\n\n";
 
-        $message .= $errorLogs
+        $message .= $errorLogs->getData()
             ? $this->logList($errorLogs, ImportInterface::IMPORT_ERROR)
             : '';
 
-        $message .= $processingLogs
+        $message .= $processingLogs->getData()
             ? $this->logList($processingLogs, ImportInterface::IMPORT_PROCESSING)
             : '';
 
