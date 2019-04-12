@@ -48,7 +48,13 @@ class SlackNotificationCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln($this->send($this->getMessage()));
+        if ($this->helperData->isEnable()) {
+            $output->writeln($this->send($this->getMessage()));
+        } else {
+            $output->writeln(
+                '<fg=red>This function has been disabled. ' . "\n" . 'To enable: Go to Settings/Configuration/Catalog/Pimgento/Slack and set Enabled to Yes</>'
+            );
+        }
     }
 
     /**

@@ -21,4 +21,8 @@ class SlackHelper extends AbstractHelper
         return $this->getConfigValue(self::XML_PATH . $code, $storeId);
     }
 
+    public function isEnable()
+    {
+        return $this->getGeneralConfig('enable');
+    }
 }
