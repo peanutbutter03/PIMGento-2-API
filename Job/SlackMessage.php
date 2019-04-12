@@ -84,7 +84,7 @@ class SlackMessage
      */
     protected function formatList(string $dateTime, string $name)
     {
-        return '> •  _' . $dateTime . '_ *' . $name . "*\n\n";
+        return '> •  _' . $dateTime . '_ *' . $name . "*\n";
     }
 }
 
