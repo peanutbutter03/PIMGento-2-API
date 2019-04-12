@@ -29,7 +29,6 @@ class RunSlackMessage
                 '<fg=red>This function has been disabled. ' . "\n"
                 . 'To enable: Go to Settings/Configuration/Catalog/Pimgento/Slack and set Enabled to Yes</>'
             );
-
         }
     }
 
